@@ -9,12 +9,13 @@ Value NEXT_HOP ([A-Fa-f0-9:\.]+)
 Value METRIC (\d+)
 Value LOCAL_PREF (\d+)
 Value WEIGHT (\d+)
-Value AS_PATH (\d+(\s.*?)*)
+Value AS_PATH ((\d+|\{\d+)(\.\d+?|\s.*?)*)
 # Origin codes: i - IGP, e - EGP, ? - incomplete, | - multipath, & - backup
 Value ORIGIN ([ie\?\|&])
 
 
 Start
+  ^Peer\s+
   ^BGP\s+(routing|table)\s 
   ^Status:
   ^Path type:
